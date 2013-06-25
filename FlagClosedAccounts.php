@@ -38,6 +38,7 @@ function efFlagClosedAccounts( $id ) {
 			"<div class=\"errorbox account-disabled-box\" style=\"padding: 1em;\">\n$1\n</div>",
 			'edit-account-closed-flag'
 		);
+		$wgOut->addHTML( '<br clear="both" />' );
 	}
 
 	return true;
