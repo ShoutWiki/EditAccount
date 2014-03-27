@@ -207,7 +207,7 @@ class EditAccount extends SpecialPage {
 			$tmpl->set( $templateVariable, $variableValue );
 		}
 
-		if( is_object( $this->mUser ) ) {
+		if ( is_object( $this->mUser ) ) {
 			if ( $this->mTempUser ) {
 				$this->mUser = $this->mTempUser->mapTempUserToUser( false );
 				$userStatus = $this->msg( 'editaccount-status-tempuser' )->plain();
@@ -417,6 +417,7 @@ class EditAccount extends SpecialPage {
 		$this->mUser->setEmail( '' );
 		$newPass = $this->generateRandomScrambledPassword();
 		$this->mUser->setPassword( $newPass );
+
 		// Save the new settings
 		$this->mUser->saveSettings();
 
@@ -426,6 +427,9 @@ class EditAccount extends SpecialPage {
 		$this->mUser = User::newFromId( $id );
 
 		if ( $this->mUser->getEmail() == '' ) {
+			// ShoutWiki patch begin
+			$this->setDisabled();
+			// ShoutWiki patch end
 			// Mark as disabled in a more real way, that doesn't depend on the real_name text
 			$this->mUser->setOption( 'disabled', 1 );
 			$this->mUser->setOption( 'disabled_date', wfTimestamp( TS_DB ) );
@@ -639,5 +643,69 @@ class EditAccount extends SpecialPage {
 		);
 
 		return true;
+	}
+
+	/**
+	 * Marks the account as disabled, the ShoutWiki way.
+	 */
+	function setDisabled() {
+		if ( !class_exists( 'GlobalPreferences' ) ) {
+			error_log( 'Cannot use the GlobalPreferences class in ' . __METHOD__ );
+			return;
+		}
+		$dbw = GlobalPreferences::getPrefsDB( DB_MASTER );
+
+		$res = $dbw->update(
+			'global_preferences',
+			array(
+				'gp_property' => 'disabled',
+				'gp_value' => 1
+			),
+			array(
+				'gp_user' => $this->mUser->getId()
+			),
+			__METHOD__
+		);
+
+		$res = $dbw->update(
+			'global_preferences',
+			array(
+				'gp_property' => 'disabled_date',
+				'gp_value' => wfTimestamp( TS_DB )
+			),
+			array(
+				'gp_user' => $this->mUser->getId()
+			),
+			__METHOD__
+		);
+	}
+
+	/**
+	 * Is the given user account disabled?
+	 *
+	 * @param $user User
+	 * @return Boolean: true if it is disabled, otherwise false
+	 */
+	public static function isAccountDisabled( $user ) {
+		if ( !class_exists( 'GlobalPreferences' ) ) {
+			error_log( 'Cannot use the GlobalPreferences class in ' . __METHOD__ );
+			return;
+		}
+		$dbr = GlobalPreferences::getPrefsDB();
+		$retVal = $dbr->selectField(
+			'global_preferences',
+			'gp_value',
+			array(
+				'gp_property' => 'disabled',
+				'gp_user' => $user->getId()
+			),
+			__METHOD__
+		);
+
+		if ( $retVal === 1 ) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 }

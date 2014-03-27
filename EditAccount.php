@@ -33,7 +33,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 $wgExtensionCredits['specialpage'][] = array(
 	'path' => __FILE__,
 	'name' => 'EditAccount',
-	'version' => '1.2',
+	'version' => '1.3',
 	'author' => array( 'Łukasz Garczewski', 'Jack Phoenix' ),
 	'descriptionmsg' => 'editaccount-desc',
 	'url' => 'https://www.mediawiki.org/wiki/Extension:EditAccount'

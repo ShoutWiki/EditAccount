@@ -30,9 +30,18 @@ function efFlagClosedAccounts( $id ) {
 	if ( !$u instanceof User ) {
 		return true;
 	}
-	$disOpt = $u->getOption( 'disabled' );
 
-	if ( !empty( $disOpt ) ) {
+	// ShoutWiki patch begin
+	// Correctly show the "This account has been disabled" box on wikis other
+	// than the central wiki (ShoutWiki Hub)
+	// @date 27 October 2013
+	// @author Jack Phoenix <jack@shoutwiki.com>
+	$isDisabled = EditAccount::isAccountDisabled( $u );
+	#$disOpt = $u->getOption( 'disabled' );
+
+	if ( $isDisabled ) {
+	/*if ( !empty( $disOpt ) ) {*/
+	// ShoutWiki patch end
 		global $wgOut;
 		$wgOut->wrapWikiMsg(
 			"<div class=\"errorbox account-disabled-box\" style=\"padding: 1em;\">\n$1\n</div>",
