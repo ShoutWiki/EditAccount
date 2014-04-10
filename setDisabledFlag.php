@@ -11,7 +11,7 @@
  * @file
  * @ingroup Maintenance
  * @author Jack Phoenix <jack@shoutwiki.com>
- * @date 29 December 2013
+ * @date 11 April 2014
  */
 
 /**
@@ -55,7 +55,7 @@ class AddEntriesForAllDisabledUsers extends Maintenance {
 							'gp_value' => 1
 						),
 						array(
-							'gp_user' => $this->mUser->getId()
+							'gp_user' => $row->user_id
 						),
 						__METHOD__
 					);
@@ -67,7 +67,7 @@ class AddEntriesForAllDisabledUsers extends Maintenance {
 							'gp_value' => wfTimestamp( TS_DB )
 						),
 						array(
-							'gp_user' => $this->mUser->getId()
+							'gp_user' => $row->user_id
 						),
 						__METHOD__
 					);
