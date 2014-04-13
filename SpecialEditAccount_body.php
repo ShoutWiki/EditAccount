@@ -655,29 +655,29 @@ class EditAccount extends SpecialPage {
 		}
 		$dbw = GlobalPreferences::getPrefsDB( DB_MASTER );
 
-		$res = $dbw->update(
+		$dbw->begin();
+		$dbw->insert(
 			'global_preferences',
 			array(
 				'gp_property' => 'disabled',
-				'gp_value' => 1
-			),
-			array(
+				'gp_value' => 1,
 				'gp_user' => $this->mUser->getId()
 			),
 			__METHOD__
 		);
+		$dbw->commit();
 
-		$res = $dbw->update(
+		$dbw->begin();
+		$dbw->insert(
 			'global_preferences',
 			array(
 				'gp_property' => 'disabled_date',
-				'gp_value' => wfTimestamp( TS_DB )
-			),
-			array(
+				'gp_value' => wfTimestamp( TS_DB ),
 				'gp_user' => $this->mUser->getId()
 			),
 			__METHOD__
 		);
+		$dbw->commit();
 	}
 
 	/**
@@ -702,10 +702,6 @@ class EditAccount extends SpecialPage {
 			__METHOD__
 		);
 
-		if ( $retVal === 1 ) {
-			return true;
-		} else {
-			return false;
-		}
+		return (bool) $retVal;
 	}
 }
