@@ -515,7 +515,7 @@ class EditAccount extends SpecialPage {
 		// This suffix shouldn't reduce the entropy of the intentionally
 		// scrambled password.
 		$REQUIRED_CHARS = 'A1a';
-		return ( wfGenerateToken() . $REQUIRED_CHARS );
+		return ( self::generateToken() . $REQUIRED_CHARS );
 	}
 
 	/**
@@ -703,5 +703,14 @@ class EditAccount extends SpecialPage {
 		);
 
 		return (bool) $retVal;
+	}
+
+	/**
+	 * Copypasta from pre-1.23 /includes/GlobalFunctions.php
+	 * @see https://git.wikimedia.org/commitdiff/mediawiki%2Fcore/118567a4ba0ded669f43a58713733cab915afe39
+	 */
+	public static function generateToken( $salt = '' ) {
+		$salt = serialize( $salt );
+		return md5( mt_rand( 0, 0x7fffffff ) . $salt );
 	}
 }
