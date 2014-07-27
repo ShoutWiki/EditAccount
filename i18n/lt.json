@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"Eitvys200"
+		]
+	},
+	"editaccount": "Redaguoti paskyrą",
+	"editaccount-frame-usage": "Pastaba",
+	"editaccount-label-email": "Nustatyti naują el. pašto adresą",
+	"editaccount-label-pass": "Nustatyti naują slaptažodį",
+	"editaccount-label-realname": "Nustatyti naują tikrą vardą",
+	"editaccount-label-clearunsub": "Neužprenumeruota",
+	"editaccount-submit-email": "Išsaugoti ir patvirtinti el. pašto adresą",
+	"editaccount-submit-pass": "Išsaugoti slaptažodį",
+	"editaccount-submit-realname": "Išsaugoti tikrą vardą",
+	"editaccount-submit-close": "Uždaryti paskyrą",
+	"editaccount-label-account-status": "Paskyros Būsena: $1",
+	"editaccount-label-email-status": "El. pašto Būsena: $1",
+	"editaccount-status-confirmed": "Patvirtinta",
+	"editaccount-status-unconfirmed": "Nepatvirtinta",
+	"editaccount-status-realuser": "Realus Vartotojas",
+	"editaccount-status-tempuser": "Laikinas Vartotojas"
+}

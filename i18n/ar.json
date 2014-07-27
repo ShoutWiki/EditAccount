@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"ترجمان05"
+		]
+	},
+	"editaccount": "عدّل الحساب",
+	"editaccount-label-select": "حدّد حساب مستخدم",
+	"editaccount-frame-account": "تعديل حساب المستخدم: $1",
+	"logentry-editaccnt-closeaccnt": "الحساب معطّل $2"
+}

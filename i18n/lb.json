@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Robby"
+		]
+	},
+	"editaccount": "Kont änneren",
+	"editaccount-frame-manage": "E Kont änneren",
+	"editaccount-frame-usage": "Notiz",
+	"editaccount-label-select": "E Benotzerkont eraussichen",
+	"editaccount-label-email": "Nei E-Mailadress festleeën",
+	"editaccount-label-pass": "Neit Passwuert festleeën",
+	"editaccount-submit-email": "E-Mailadress späicheren",
+	"editaccount-submit-pass": "Passwuert späicheren",
+	"editaccount-submit-realname": "Richtegen Numm späicheren",
+	"editaccount-submit-close": "Kont zoumaachen",
+	"editaccount-invalid-email": "\"$1\" ass keng valabel E-Mailadress!",
+	"editaccount-nouser": "De Kont \"$1\" gëtt et net!",
+	"editaccount-status-realuser": "Richtege Benotzer",
+	"editaccount-status-tempuser": "Temporäre Benotzer",
+	"log-name-editaccnt": "Logbuch vun de Benotzerkonten",
+	"logentry-editaccnt-realnamechange": "huet de richtegen Numm vum Benotzer $2 geännert",
+	"edit-account-closed-flag": "Dëse Benotzerkont gouf global desaktivéiert.",
+	"right-editaccount": "Aner Benotzerastellungen änneren"
+}

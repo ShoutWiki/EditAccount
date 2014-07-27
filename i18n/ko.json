@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Cafeinlove"
+		]
+	},
+	"editaccount-submit-email": "저장하고 이메일 주소 인증하기",
+	"editaccount-status-confirmed": "확인됨",
+	"editaccount-status-unconfirmed": "확인되지 않음"
+}

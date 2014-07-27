@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"DCLXVI"
+		]
+	},
+	"editaccount-submit-pass": "Съхраняване на паролата",
+	"editaccount-invalid-email": "\"$1\" не е валиден адрес за електронна поща!",
+	"right-editaccount": "Редактиране на настройките на други потребители"
+}

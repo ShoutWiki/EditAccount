@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Crazymadlover",
+			"Dada",
+			"Evropi"
+		]
+	},
+	"editaccount": "Επεξεργασία λογαριασμού",
+	"editaccount-desc": "Επιτρέπει στα μέλη του προσωπικού να διαχειρίζονται τις πληροφορίες λογαριασμού χρήστη",
+	"editaccount-frame-manage": "Επεξεργασία ενός λογαριασμού",
+	"editaccount-frame-usage": "Σημείωμα",
+	"editaccount-submit-account": "Διαχείριση λογαριασμού",
+	"editaccount-frame-account": "Επεξεργασία λογαριασμού χρήστη: $1",
+	"editaccount-frame-close": "Απενεργοποίηση λογαριασμού χρήστη: $1",
+	"editaccount-label-email": "Ορισμός νέα διεύθυνσης ηλεκτρονικού ταχυδρομείου",
+	"editaccount-label-pass": "Ορισμός νέου κωδικού πρόσβασης",
+	"editaccount-label-realname": "Ορισμός νέου πραγματικού ονόματος",
+	"editaccount-submit-email": "Αποθήκευση διεύθυνσης ηλεκτρονικού ταχυδρομείου",
+	"editaccount-submit-pass": "Αποθήκευση κωδικού",
+	"editaccount-submit-realname": "Αποθήκευση πραγματικού ονόματος",
+	"editaccount-submit-close": "Κλείσιμο λογαριασμού",
+	"logentry-editaccnt-passchange": "Έγινε αλλαγή στον κωδικό πρόσβασης του χρήστη $2"
+}

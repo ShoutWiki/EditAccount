@@ -33,7 +33,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 $wgExtensionCredits['specialpage'][] = array(
 	'path' => __FILE__,
 	'name' => 'EditAccount',
-	'version' => '1.3',
+	'version' => '1.3.1',
 	'author' => array( 'Łukasz Garczewski', 'Jack Phoenix' ),
 	'descriptionmsg' => 'editaccount-desc',
 	'url' => 'https://www.mediawiki.org/wiki/Extension:EditAccount'
@@ -50,9 +50,8 @@ $wgLogActionsHandlers['editaccnt/*'] = 'LogFormatter';
 $wgLogRestrictions['editaccnt'] = 'editaccount';
 
 // Set up the new special page
-$dir = dirname( __FILE__ ) . '/';
-$wgExtensionMessagesFiles['EditAccount'] = $dir . 'EditAccount.i18n.php';
-$wgExtensionMessagesFiles['EditAccountAliases'] = $dir . 'EditAccount.alias.php';
-$wgAutoloadClasses['EditAccount'] = $dir . 'SpecialEditAccount_body.php';
+$wgMessagesDirs['EditAccount'] = __DIR__ . '/i18n';
+$wgExtensionMessagesFiles['EditAccountAliases'] = __DIR__ . '/EditAccount.alias.php';
+$wgAutoloadClasses['EditAccount'] = __DIR__ . '/SpecialEditAccount_body.php';
 $wgSpecialPages['EditAccount'] = 'EditAccount';
 $wgSpecialPageGroups['EditAccount'] = 'users';

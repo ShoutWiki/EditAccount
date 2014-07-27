@@ -1,0 +1,41 @@
+{
+	"@metadata": {
+		"authors": [
+			"Anakmalaysia",
+			"Dimension",
+			"Hydra",
+			"Hzy980512",
+			"Yfdyh000"
+		]
+	},
+	"editaccount": "编辑账户",
+	"editaccount-desc": "允许管理人员处理用户帐户信息",
+	"editaccount-frame-manage": "编辑账户",
+	"editaccount-frame-usage": "注意",
+	"editaccount-usage": "用户数据被每个Wiki分别储存。当您修改密码或电子邮箱时，只会在修改的Wiki上生效。请直接使用新密码登入该Wiki，以避免缓存问题。",
+	"editaccount-label-select": "选择一个用户",
+	"editaccount-submit-account": "管理用户",
+	"editaccount-frame-account": "编辑用户帐户:$1",
+	"editaccount-frame-close": "禁用用户帐户：$1",
+	"editaccount-label-email": "设置新电子邮件地址",
+	"editaccount-label-pass": "设置新密码",
+	"editaccount-label-realname": "设置新真实姓名",
+	"editaccount-label-clearunsub": "已取消关注",
+	"editaccount-submit-email": "保存电子邮件地址",
+	"editaccount-submit-pass": "保存密码",
+	"editaccount-submit-realname": "保存真名",
+	"editaccount-submit-close": "关闭帐户",
+	"editaccount-success-email-blank": "成功移除帐户 $1 的电子邮件地址。",
+	"editaccount-success-pass": "帐户 $1 的密码更改成功。",
+	"editaccount-success-realname": "帐户 $1 的真实姓名更改成功。",
+	"editaccount-success-close": "成功禁用了帐户 $1 。",
+	"editaccount-nouser": "帐户“$1”不存在！",
+	"editaccount-label-account-status": "帐户状态: $1",
+	"editaccount-label-email-status": "电子邮件状态: $1",
+	"editaccount-status-confirmed": "已确认",
+	"editaccount-status-unconfirmed": "未确认",
+	"editaccount-status-realuser": "活跃用户",
+	"editaccount-status-tempuser": "临时用户",
+	"log-name-editaccnt": "用户帐户日志",
+	"right-editaccount": "编辑其他用户的信息"
+}

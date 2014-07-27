@@ -1,0 +1,28 @@
+{
+	"@metadata": {
+		"authors": [
+			"Rancher",
+			"Verlor"
+		]
+	},
+	"editaccount": "Измена налога",
+	"editaccount-frame-manage": "Уреди налог",
+	"editaccount-frame-usage": "Белешка",
+	"editaccount-label-select": "Изаберите кориснички налог",
+	"editaccount-frame-close": "Онемогући кориснички налог: $1",
+	"editaccount-label-email": "Постави нову е-адресу",
+	"editaccount-label-pass": "Постави нову лозинку",
+	"editaccount-label-realname": "Унесите право име",
+	"editaccount-submit-email": "Сачувај е-адресу",
+	"editaccount-submit-pass": "Сачувај лозинку",
+	"editaccount-submit-realname": "Сачувај право име",
+	"editaccount-submit-close": "Затвори налог",
+	"editaccount-status": "Статусна порука",
+	"editaccount-success-email": "Е-адреса за налог $1 на $2 је измењена.",
+	"editaccount-success-pass": "Лозинка за налог $1 је измењена.",
+	"editaccount-success-realname": "Право име за налог $1 је измењено.",
+	"editaccount-success-close": "Налог $1 је успешно затворен.",
+	"editaccount-invalid-email": "„$1“ није исправна е-адреса!",
+	"editaccount-nouser": "„$1“ налог не постоји!",
+	"log-name-editaccnt": "Дневник корисничких налога"
+}
