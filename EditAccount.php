@@ -54,4 +54,3 @@ $wgMessagesDirs['EditAccount'] = __DIR__ . '/i18n';
 $wgExtensionMessagesFiles['EditAccountAliases'] = __DIR__ . '/EditAccount.alias.php';
 $wgAutoloadClasses['EditAccount'] = __DIR__ . '/SpecialEditAccount_body.php';
 $wgSpecialPages['EditAccount'] = 'EditAccount';
-$wgSpecialPageGroups['EditAccount'] = 'users';

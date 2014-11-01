@@ -19,7 +19,7 @@
  * $IP/extensions/EditAccount and we don't need to move this file to
  * $IP/maintenance/.
  */
-ini_set( 'include_path', dirname( __FILE__ ) . '/../../maintenance' );
+ini_set( 'include_path', __DIR__ . '/../../maintenance' );
 
 require_once( 'Maintenance.php' );
 

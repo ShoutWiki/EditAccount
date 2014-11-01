@@ -11,11 +11,11 @@
  */
 
 class EditAccount extends SpecialPage {
-	var $mUser = null;
-	var $mStatus = null;
-	var $mStatusMsg;
-	var $mStatusMsg2 = null;
-	var $mTempUser = null;
+	public $mUser = null;
+	public $mStatus = null;
+	public $mStatusMsg;
+	public $mStatusMsg2 = null;
+	public $mTempUser = null;
 
 	/**
 	 * Constructor -- set up the new special page
@@ -28,10 +28,19 @@ class EditAccount extends SpecialPage {
 	}
 
 	/**
+	 * Group this special page under the correct header in Special:SpecialPages.
+	 *
+	 * @return string
+	 */
+	function getGroupName() {
+		return 'users';
+	}
+
+	/**
 	 * Special page description shown on Special:SpecialPages -- different for
 	 * privileged users and mortals
 	 *
-	 * @return String: special page description
+	 * @return string Special page description
 	 */
 	function getDescription() {
 		if ( $this->getUser()->isAllowed( 'editaccount' ) ) {
@@ -44,7 +53,7 @@ class EditAccount extends SpecialPage {
 	/**
 	 * Show the special page
 	 *
-	 * @param $par Mixed: parameter passed to the page or null
+	 * @param string|null $par Parameter (user name) passed to the page or null
 	 */
 	public function execute( $par ) {
 		$out = $this->getOutput();
@@ -257,9 +266,9 @@ class EditAccount extends SpecialPage {
 	/**
 	 * Set a user's e-mail
 	 *
-	 * @param $email String: e-mail address to set to the user
-	 * @param $changeReason String: reason for change
-	 * @return Boolean: true on success, false on failure (i.e. if we were given an invalid email address)
+	 * @param string $email E-mail address to set to the user
+	 * @param string $changeReason Reason for change
+	 * @return bool True on success, false on failure (i.e. if we were given an invalid email address)
 	 */
 	function setEmail( $email, $changeReason = '' ) {
 		$oldEmail = $this->mUser->getEmail();
@@ -314,9 +323,9 @@ class EditAccount extends SpecialPage {
 	/**
 	 * Set a user's password.
 	 *
-	 * @param $pass Mixed: password to set to the user
-	 * @param $changeReason String: reason for change
-	 * @return Boolean: true on success, false on failure
+	 * @param mixed $pass Password to set to the user
+	 * @param string $changeReason Reason for change
+	 * @return bool True on success, false on failure
 	 */
 	function setPassword( $pass, $changeReason = '' ) {
 		if ( $this->mUser->setPassword( $pass ) ) {
@@ -350,9 +359,9 @@ class EditAccount extends SpecialPage {
 	/**
 	 * Set a user's real name.
 	 *
-	 * @param $pass Mixed: real name to set to the user
-	 * @param $changeReason String: reason for change
-	 * @return Boolean: true on success, false on failure
+	 * @param mixed $pass Real name to set to the user
+	 * @param string $changeReason Reason for change
+	 * @return bool True on success, false on failure
 	 */
 	function setRealName( $realName, $changeReason = '' ) {
 		$this->mUser->setRealName( $realName );
@@ -382,8 +391,8 @@ class EditAccount extends SpecialPage {
 	 * Scrambles the user's password, sets an empty e-mail and marks the
 	 * account as disabled
 	 *
-	 * @param $changeReason String: reason for change
-	 * @return Boolean: true on success, false on failure
+	 * @param string $changeReason Reason for change
+	 * @return bool True on success, false on failure
 	 */
 	function closeAccount( $changeReason = '' ) {
 		// Set flag for Special:Contributions
@@ -399,7 +408,7 @@ class EditAccount extends SpecialPage {
 		if ( class_exists( 'wAvatar' ) ) { // SocialProfile
 			// Commented out because as of 17 June 2013, ShoutWiki has only 8
 			// wikis with SocialProfile enabled and this method is probably
-			// *very* expensive since it does operators for everything in the
+			// *very* expensive since it does operations for everything in the
 			// images directory...
 			//$this->removeSocialProfileAvatars();
 		} elseif ( class_exists( 'Masthead' ) ) { // Wikia's avatar extension
@@ -463,7 +472,7 @@ class EditAccount extends SpecialPage {
 	/**
 	 * Clears the magic unsub bit
 	 *
-	 * @return Boolean: true
+	 * @return bool Always true
 	 */
 	function clearUnsubscribe() {
 		$this->mUser->setOption( 'unsubscribed', null );
@@ -477,7 +486,7 @@ class EditAccount extends SpecialPage {
 	/**
 	 * Clears the magic disabled bit
 	 *
-	 * @return Boolean: true
+	 * @return bool Always true
 	 */
 	function clearDisable() {
 		$this->mUser->setOption( 'disabled', null );
@@ -493,7 +502,7 @@ class EditAccount extends SpecialPage {
 	 * Set the adoption status (i.e. is the user who is being edited allowed to
 	 * automatically adopt wikis or not).
 	 *
-	 * @return Boolean: true
+	 * @return bool Always true
 	 */
 	function toggleAdopterStatus() {
 		$this->mUser->setOption( 'AllowAdoption', (int) !$this->mUser->getOption( 'AllowAdoption', 1 ) );
@@ -507,6 +516,8 @@ class EditAccount extends SpecialPage {
 	/**
 	 * Returns a random password which conforms to our password requirements
 	 * and is not easily guessable.
+	 *
+	 * @return string
 	 */
 	function generateRandomScrambledPassword() {
 		// Password requirements need a capital letter, a digit, and a lowercase letter.
@@ -526,7 +537,7 @@ class EditAccount extends SpecialPage {
 	 * That method should be made public and this should then be rewritten
 	 * accordingly.
 	 *
-	 * @return Boolean: true
+	 * @return bool Always true
 	 */
 	function removeSocialProfileAvatars() {
 		global $IP, $wgUploadDirectory, $wgDBname, $wgMemc, $wgUploadAvatarInRecentChanges;
@@ -684,7 +695,7 @@ class EditAccount extends SpecialPage {
 	 * Is the given user account disabled?
 	 *
 	 * @param $user User
-	 * @return Boolean: true if it is disabled, otherwise false
+	 * @return bool True if it is disabled, otherwise false
 	 */
 	public static function isAccountDisabled( $user ) {
 		if ( !class_exists( 'GlobalPreferences' ) ) {

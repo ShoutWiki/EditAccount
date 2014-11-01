@@ -22,7 +22,7 @@ define( 'CLOSED_ACCOUNT_FLAG', 'Account Disabled' );
 
 $wgHooks['SpecialContributionsBeforeMainOutput'][] = 'efFlagClosedAccounts';
 
-$wgExtensionMessagesFiles['EditAccount'] = dirname( __FILE__ ) . '/EditAccount.i18n.php';
+$wgMessagesDirs['EditAccount'] = __DIR__ . '/i18n';
 
 function efFlagClosedAccounts( $id ) {
 	$u = User::newFromId( $id );
